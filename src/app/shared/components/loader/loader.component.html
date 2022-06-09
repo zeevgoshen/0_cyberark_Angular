@@ -1,0 +1,6 @@
+<div *ngIf="isLoading"
+     class="loader-container">
+  <mat-spinner aria-label="Loader">
+  </mat-spinner>
+  <h1 class="loader-container__message" *ngIf="text">{{ text }}</h1>
+</div>

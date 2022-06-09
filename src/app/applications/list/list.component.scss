@@ -1,0 +1,145 @@
+:host {
+  width: 100%;
+}
+
+.applications {
+  &__applications-title {
+    margin-top: 50px;
+    cursor: default;
+  }
+
+  &__top-panel {
+    & {
+      display: flex;
+      align-items: center;
+      margin-top: 100px;
+    }
+
+    &__total {
+      font-size: 16px;
+      color: #2f3564;
+      cursor: default;
+    }
+
+    &__search {
+      margin-left: 50px;
+    }
+
+    &__add-btn {
+      margin-left: auto;
+      border-radius: 15px;
+    }
+  }
+
+  &__applications-list-container {
+    & {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &__app-card {
+      & {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-height: 150px;
+        max-height: 150px;
+        margin: 0px 30px 30px 0px;
+        border-width: 1px;
+        border-style: solid;
+        cursor: pointer;
+        background-color: white;
+        border-color: #dedfe4;
+        padding: 20px;
+
+        @media (max-width: 1620px) {
+          width: calc(33.3333% - #{0.6667 * 30px} - 6.6667px);
+          max-width: calc(33.3333% - #{0.6667 * 30px} - 6.6667px);
+        }
+
+        @media (min-width: 1620px) {
+          width: calc(25% - #{0.75 * 30px} - 5px);
+          max-width: calc(25% - #{0.75 * 30px} - 5px);
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      &__header {
+        & {
+          display: flex;
+        }
+
+        &__logo {
+          border-radius: 50%;
+          height: 80px;
+          width: 80px;
+        }
+
+        &__title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 20px;
+          color: #2f3564;
+        }
+
+        &__action {
+          margin-left: auto;
+        }
+      }
+
+      &__body {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #2f3564;
+      }
+    }
+  }
+}
+
+.disabledApp {
+  background-color: lightgrey;
+
+}
+
+.notPublishedAppBubble {
+  float:right;
+  visibility: visible !important;
+  position: absolute;
+  border:2px solid grey;
+  margin-left:230px;
+  margin-top:-10px;
+  -webkit-border-radius: 5px;
+           border-radius: 5px;
+  padding:1px;
+}
+
+
+// button.mat-button .mat-icon,
+// a.mat-button .mat-icon,
+// a.mat-raised-button .mat-icon,
+// a.mat-flat-button .mat-icon,
+// a.mat-stroked-button .mat-icon {
+//   vertical-align: top;
+//   font-size: 1.25em;
+
+// }
+
+// .icon_new {
+//   border: 1px solid red;
+//   src: url(/assets/imgages/ic-more-blue.png); /* 16px x 16px */
+//     background-color: transparent; /* make the button transparent */
+//     background-repeat: no-repeat;  /* make the background image appear only once */
+//     background-position: 0px 0px;  /* equivalent to 'top left' */
+//     border: none;           /* assuming we don't want any borders */
+//     cursor: pointer;        /* make the cursor like hovering over an <a> element */
+//     height: 16px;           /* make this the size of your image */
+//     padding-left: 16px;     /* make text start to the right of the image */
+//     vertical-align: middle; /* align the text vertically centered */
+// }

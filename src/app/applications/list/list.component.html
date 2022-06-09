@@ -1,0 +1,41 @@
+<app-loader *ngIf="this.isPending" [isLoading]="this.isPending"></app-loader>
+<div class="applications">
+  <h1 class="applications__applications-title"> Applications </h1>
+  <div class="applications__top-panel">
+    <span class="applications__top-panel__total">Total {{apps.length}} apps</span>
+    <form class="applications__top-panel__search" autocomplete="off">
+      <mat-form-field>
+        <input #searchInput matInput type="text" placeholder="search" (change)="onTextChanged()">
+      </mat-form-field>
+    </form>
+
+    <button mat-flat-button color="primary" class="applications__top-panel__add-btn">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </div>
+  <div class="applications__applications-list-container">
+    <div *ngFor="let currApp of apps" (click)="navigateToDetails(currApp)" class="applications__applications-list-container__app-card">
+
+      <div  [class.disabledApp]="currApp.status === 'Disabled'">
+        <div class="applications__applications-list-container__app-card__header" >
+          <div style="visibility:hidden" [class.notPublishedAppBubble]="currApp.status === 'Disabled'">
+            <div>Not Published</div>
+          </div>
+          <img class="applications__applications-list-container__app-card__header__logo"
+              [src]="currApp.logo"/>
+          <span class="applications__applications-list-container__app-card__header__title">{{currApp.name}}</span>
+
+      </div>
+      <div>
+        <!-- <app-ddl appId="{{currApp.id}}" [apps]="apps"></app-ddl> -->
+        <app-ddl appId="{{currApp.id}}"></app-ddl>
+    </div>
+
+      <div class="applications__applications-list-container__app-card__body">
+        <span> Usage last hour {{ currApp.countOfUseLastHour || '-' }} </span>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

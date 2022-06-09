@@ -1,0 +1,25 @@
+:host {
+
+}
+
+.loader-container {
+  & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000066;
+  }
+
+  &__message {
+    font-weight: 400;
+    font-size: 32px;
+    color: #ffffff
+  }
+}

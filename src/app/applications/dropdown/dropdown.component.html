@@ -1,0 +1,17 @@
+
+<mat-accordion multi="false">
+  <mat-expansion-panel #example hideToggle="true" class="applications__applications-list-container__app-card__header__action"
+  (click)="$event.stopPropagation()">
+    <mat-expansion-panel-header>
+      <input type="button" value="" class="icon_new"  />
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-action-row>
+    <div (click)="onDeleteClick(appId)" class="ddl_row">
+      <div>Delete the App<mat-icon style="float:right">delete_outline</mat-icon></div>
+  </div>
+  </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
